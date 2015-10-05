@@ -1,27 +1,31 @@
 //your code here
 
-NormalParticle [] space = new NormalParticle[10];
+NormalParticle [] space = new NormalParticle[100];
 
 void setup()
 {
 	//your code here
 	size(300,300);
-	for(int i = 0; i <space.length; i++)
+	
+	for(int i = 0; i < space.length; i++)
 	{
 		space[i] = new NormalParticle();
 	}
+
 }
 void draw()
 {
 	//your code here
-	for(int i=0; i<space.length; i++)
+	for(int i=0; i < space.length; i++)
 	{
 		space[i].move();
 		space[i].show();
 	}
+
 }
 class NormalParticle
 {
+		
 		int x,y;
 		color c;
 		int angle;
@@ -30,25 +34,26 @@ class NormalParticle
 	//your code here
 	NormalParticle()
 	{
-		 x = 150;
-		 y = 150;
+	    x = 150;
+		y = 150;
 	    angle = 100;
 	    speed = 25;
+
 	}
 
 	void move()
 	{
 
-		x = x + (int)Math.cos(angle)*speed;
-		y = y + (int)Math.sin(angle)*speed;
+		x = x + (int)Math.cos((angle)*speed);
+		y = y + (int)Math.sin((angle)*speed);
 		
+
 		println("x: "+x);
 		println("y: "+y);
 
-		
-		println("Math.cos(angle)*speed: "+Math.cos(angle)*speed);
-		println("Math.sin(angle)*speed: "+Math.sin(angle)*speed);
 
+		println("Math.cos(angle)*speed: "+Math.cos((angle)*speed));
+		println("Math.sin(angle)*speed: "+Math.sin((angle)*speed));
 	}
 
 	void show()
