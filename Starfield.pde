@@ -1,6 +1,6 @@
-//your code here
+///your code here
 
-NormalParticle [] space = new NormalParticle[100];
+NormalParticle [] space = new NormalParticle[300];
 
 void setup()
 {
@@ -22,6 +22,10 @@ void draw()
   {
       background(0,0,0);
   }
+  
+  
+
+  
  // background(0,0,0);
   for(int i=0; i < space.length; i++)
   {
@@ -44,30 +48,31 @@ class NormalParticle
       x = 150;
       y = 150;
       angle = Math.random()*(2*PI);
+
       
-      int rand = (int)(Math.random()*4);
-      if (rand == 1)
-      {
-        speed = 10;
-      }
-      else if (rand == 2)
-      {
-        speed = 20;
-      }
-      else if (rand == 3)
-      {
-           speed = 30;
-      }
-      //speed = 30;
+      speed = Math.random()*1.5;
+      strokeWeight(2);
       
-      
+     
   }
 
   void move()
   {
     
-    x = x + Math.cos((angle)*speed);
-    y = y + Math.sin((angle)*speed);
+   
+     if(frameCount%100 == 0)
+  {
+//    x = 350;
+//    y = 250;
+     x = 300;
+     y = 300;
+  }
+   
+   
+   
+    println(speed);
+    x = x + Math.cos(angle)*speed;
+    y = y + Math.sin(angle)*speed;
     
 
     
@@ -77,7 +82,11 @@ class NormalParticle
   {
     //fill(255,0,0);
     //fill((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
-    ellipse((int)x,(int)y,10,10);
+    //ellipse((int)x,(int)y,10,10);
+    //strokeWeight(2);
+    stroke(255,255,0);
+
+    point((float)x,(float)y);
   }
 }
 interface Particle
