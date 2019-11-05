@@ -1,7 +1,7 @@
 
 
 //NormalParticle [] space = new NormalParticle[300];
-Particle [] space = new Particle[302];
+Particle [] space = new Particle[300];
 
 
 void setup()
