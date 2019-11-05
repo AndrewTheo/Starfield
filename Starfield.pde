@@ -16,8 +16,7 @@ void setup()
     space[i] = new NormalParticle();
   }
   
-  space[300] = new OddballParticle();
-  space[301] = new JumboParticle();
+  
 
 }
 void draw()
